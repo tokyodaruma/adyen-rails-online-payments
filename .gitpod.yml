@@ -5,6 +5,8 @@ tasks:
 - init: PATH="/home/gitpod/.rvm/ruby-3.1.1/bin:/home/gitpod/.rvm/ruby-3.1.1@global/bin:/home/gitpod/.rvm/rubies/ruby-3.1.1/bin:$PATH"
         bundle install
   command: |
+        eval $(command gp env -e)
+        echo "check, ${ADYEN_MERCHANT_ACCOUNT}"
         PATH="/home/gitpod/.rvm/ruby-3.1.1/bin:/home/gitpod/.rvm/ruby-3.1.1@global/bin:/home/gitpod/.rvm/rubies/ruby-3.1.1/bin:$PATH"
         unset DATABASE_URL
         if [ -z ${ADYEN_HMAC_KEY+x} ] || [[ -z ${ADYEN_API_KEY+x} ]] || [[ -z ${ADYEN_CLIENT_KEY+x} ]] || [[ -z ${ADYEN_MERCHANT_ACCOUNT+x} ]]; then
