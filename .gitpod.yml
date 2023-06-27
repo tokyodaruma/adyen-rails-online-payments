@@ -2,8 +2,7 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  -name: configure variables and bundle
-  init: PATH="/home/gitpod/.rvm/ruby-3.1.1/bin:/home/gitpod/.rvm/ruby-3.1.1@global/bin:/home/gitpod/.rvm/rubies/ruby-3.1.1/bin:$PATH"
+  - init: PATH="/home/gitpod/.rvm/ruby-3.1.1/bin:/home/gitpod/.rvm/ruby-3.1.1@global/bin:/home/gitpod/.rvm/rubies/ruby-3.1.1/bin:$PATH"
         bundle install
   command: |
         eval $(command gp env -e)
