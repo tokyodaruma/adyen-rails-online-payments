@@ -6,10 +6,10 @@ tasks:
         bundle install
     command: |
           eval $(command gp env -e)
-          sed -i~ "s|.*ADYEN_HMAC_KEY:*|ADYEN_HMAC_KEY: $ADYEN_HMAC_KEY|" config/local_env.yml
-          sed -i~ "s|.*ADYEN_MERCHANT_ACCOUNT:*|ADYEN_MERCHANT_ACCOUNT: $ADYEN_MERCHANT_ACCOUNT|" config/local_env.yml
-          sed -i~ "s|.*ADYEN_API_KEY:*|ADYEN_API_KEY: $ADYEN_API_KEY|" config/local_env.yml
-          sed -i~ "s|.*ADYEN_CLIENT_KEY:*|ADYEN_CLIENT_KEY: $ADYEN_CLIENT_KEY|" config/local_env.yml
+          sed -i "s|.*ADYEN_HMAC_KEY:*|ADYEN_HMAC_KEY: $ADYEN_HMAC_KEY|" config/local_env.yml
+          sed -i "s|.*ADYEN_MERCHANT_ACCOUNT:*|ADYEN_MERCHANT_ACCOUNT: $ADYEN_MERCHANT_ACCOUNT|" config/local_env.yml
+          sed -i "s|.*ADYEN_API_KEY:*|ADYEN_API_KEY: $ADYEN_API_KEY|" config/local_env.yml
+          sed -i "s|.*ADYEN_CLIENT_KEY:*|ADYEN_CLIENT_KEY: $ADYEN_CLIENT_KEY|" config/local_env.yml
           PATH="/home/gitpod/.rvm/ruby-3.1.1/bin:/home/gitpod/.rvm/ruby-3.1.1@global/bin:/home/gitpod/.rvm/rubies/ruby-3.1.1/bin:$PATH"
           unset DATABASE_URL
           if [ -z ${ADYEN_HMAC_KEY+x} ] || [[ -z ${ADYEN_API_KEY+x} ]] || [[ -z ${ADYEN_CLIENT_KEY+x} ]] || [[ -z ${ADYEN_MERCHANT_ACCOUNT+x} ]]; then
